@@ -1,0 +1,30 @@
+.sidebar {
+  width: 200px;
+  height: 100vh; /* Establece la altura al 100% de la altura visible de la ventana */
+  background-color: #f1f1f1;
+  position: fixed; /* Fija el panel en su posición */
+  top: 0; /* Pega el panel en la parte superior */
+  left: 0; /* Pega el panel en la parte izquierda */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  background-color: #ddd;
+}
+
+.main-content {
+  margin-left: 200px; /* Espacio para el panel lateral */
+  padding: 20px;
+}

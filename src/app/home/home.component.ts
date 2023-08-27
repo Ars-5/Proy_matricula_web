@@ -12,4 +12,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sidebarOptions = [
+    { route: '/home', label: 'Home', iconClass: 'assets/sgv/HomeEmpty.svg' },
+    { route: '/examen', label: 'Examen', iconClass: 'fa fa-search' },
+    { route: '/consulta', label: 'Consultas', iconClass: 'fa fa-rocket' }
+    // Otras opciones de navegación
+  ];
+
 }

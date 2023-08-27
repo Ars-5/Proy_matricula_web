@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <!-- Aquí coloca tu código HTML para la barra lateral -->
+  <ul>
+    <li *ngFor="let option of navigationOptions">
+      <a [routerLink]="option.route">
+        <i [class]="option.iconClass"></i> {{ option.label }}
+      </a>
+    </li>
+  </ul>
+</div>

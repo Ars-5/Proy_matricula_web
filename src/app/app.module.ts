@@ -5,16 +5,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ExamenComponent } from './examen/examen.component';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ConsultaComponent,
-    ExamenComponent
+    ExamenComponent,
+    LoginComponent,
+    SidebarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
