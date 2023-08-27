@@ -1,0 +1,23 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Estilos para el input y el botón */
+.hash-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilos para el bloque de detalles */
+.block-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}

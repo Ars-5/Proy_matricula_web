@@ -1,9 +1,26 @@
 <div class="sidebar">
-  <!-- Aquí coloca tu código HTML para la barra lateral -->
+
+  <div class="avatar-container">
+    <!-- Aquí irá el avatar -->
+    <img src="ruta-del-avatar" alt="Avatar" class="avatar">
+    <div class="user-details">
+      <!-- Aquí irá el nombre y el código -->
+      <h3>Nombre del usuario</h3>
+      <p>Código del usuario</p>
+    </div>
+  </div>
+
   <ul>
     <li *ngFor="let option of navigationOptions">
       <a [routerLink]="option.route">
         <i [class]="option.iconClass"></i> {{ option.label }}
+      </a>
+    </li>
+
+    <!-- Botón de logout -->
+    <li>
+      <a [routerLink]="'/login'" class="logout-button">
+        Salir
       </a>
     </li>
   </ul>

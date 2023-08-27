@@ -2,5 +2,14 @@
 
 <div class="main-content">
   <!-- Aquí se mostrará el contenido principal de cada vista -->
+  <div class="hash-input">
+    <label for="hash">Ingresa un hash:</label>
+    <input type="text" id="hash" name="hash">
+    <button onclick="consultarBloque()">Consultar</button>
+  </div>
 
+  <div class="block-details">
+    <h2>Bloque Consultado:</h2>
+    <textarea id="block" rows="10" readonly></textarea>
+  </div>
 </div>
