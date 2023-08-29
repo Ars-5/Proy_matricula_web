@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, HostListener} from '@angular/core';
 import { navbarData } from './nav-data';
 
 interface SideNavToggle {
@@ -10,14 +10,27 @@ interface SideNavToggle {
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
-  @Input() navigationOptions!: any[];
+export class SidebarComponent implements OnInit {
+
   @Output() onToggleSideNav:EventEmitter<SideNavToggle> = new EventEmitter();
   // sidebarHidden = false;
   // labelsVisible = true;
   collapsed = false;
   screenWidth = 0;
   navData = navbarData
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event:any){
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 768) {
+      this.collapsed = false;
+      this.onToggleSideNav.emit({collapsed: this.collapsed , screenWidth : this.screenWidth});
+    }
+  }
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+  }
 
   // toggleSidebar() {
   //   this.sidebarHidden = !this.sidebarHidden;

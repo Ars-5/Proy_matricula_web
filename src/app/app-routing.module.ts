@@ -7,7 +7,7 @@ import { ExamenComponent } from './examen/examen.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sideb', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'examen', component: ExamenComponent },
