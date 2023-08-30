@@ -9,8 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { RegisterComponent } from './register/register.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     ConsultaComponent,
     ExamenComponent,
     LoginComponent,
-    SidebarComponent
+    SidebarComponent,
+    RegisterComponent,
+    InstruccionesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SweetAlert2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

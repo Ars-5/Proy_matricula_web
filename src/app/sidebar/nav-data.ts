@@ -13,5 +13,10 @@ export const navbarData = [
   routeLink: '/consulta',
   icon: 'fal fa-search',
   label: 'Consulta',
+},
+{
+  routeLink: '/login',
+  icon: 'fal fa-sign-out',
+  label: 'Log out',
 }
 ]

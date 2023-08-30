@@ -1,19 +1,28 @@
 .exam-container {
   width: 80%;
-  margin: 0 auto;
-  padding: 20px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 25px;
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.titulo {
+  margin-bottom: 15px;
+}
+
 .question {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
+}
+
+.pregunta {
+  margin-bottom: 15px;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 button {

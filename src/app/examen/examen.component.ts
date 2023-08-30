@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-examen',
@@ -19,15 +20,25 @@ export class ExamenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   submitExam() {
-    // Lógica para evaluar las respuestas del examen
-    // y mostrar resultados
+    // ... tu código para validar y procesar el formulario ...
+
+    // Mostrar la alerta de registro exitoso
+    Swal.fire({
+      title: '¡Examen completado!',
+      text: 'Tu examen ha sido completado con éxito',
+      icon: 'success',
+      timer: 15000, // Muestra la alerta durante 3 segundos
+      showConfirmButton: true,
+      confirmButtonText: 'OK'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirigir después de hacer clic en el botón OK
+        // this.router.navigate(['/login']);
+      }
+    });
   }
 
-  sidebarOptions = [
-    { route: '/home', label: 'Home', iconClass: 'fa fa-home' },
-    { route: '/examen', label: 'Examen', iconClass: 'fa fa-search' },
-    { route: '/consulta', label: 'Consultas', iconClass: 'fa fa-rocket' }
-    // Otras opciones de navegación
-  ];
+
 }

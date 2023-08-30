@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ExamenComponent } from './examen/examen.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { RegisterComponent } from './register/register.component';
+import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'examen', component: ExamenComponent },
   { path: 'consulta', component: ConsultaComponent },
   { path: 'sideb', component: SidebarComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'guia', component: InstruccionesComponent },
   // Agrega más rutas según sea necesario
 ];
 
