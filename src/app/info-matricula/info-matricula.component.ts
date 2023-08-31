@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-info-matricula',
   templateUrl: './info-matricula.component.html',
-  styleUrls: ['./info-matricula.component.css']
+  styleUrls: ['./info-matricula.component.css'],
 })
 export class InfoMatriculaComponent {
   name: string = '';
@@ -20,10 +20,10 @@ export class InfoMatriculaComponent {
 
     this.http.post('http://localhost:8080/submit-transaction', payload)
       .subscribe(
-        (response) => {
+        (response: any) => {
           console.log('Transaction submitted:', response);
         },
-        (error) => {
+        (error: any) => {
           console.error('Error submitting transaction:', error);
         }
       );

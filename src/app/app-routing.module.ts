@@ -10,7 +10,7 @@ import { InstruccionesComponent } from './instrucciones/instrucciones.component'
 import { InfoMatriculaComponent } from './info-matricula/info-matricula.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/info', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'examen', component: ExamenComponent },
