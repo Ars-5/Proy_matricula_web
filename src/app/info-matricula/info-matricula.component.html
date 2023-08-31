@@ -1,0 +1,10 @@
+<app-sidebar></app-sidebar>
+
+<div>
+  <label for="name">Name:</label>
+  <input type="text" id="name" [(ngModel)]="name" required><br><br>
+  <label for="age">Age:</label>
+<input type="number" id="age" [(ngModel)]="age" name="age" required><br><br>
+
+  <button (click)="submitForm()">Submit</button>
+</div>

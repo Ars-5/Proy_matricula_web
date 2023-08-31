@@ -7,6 +7,7 @@ import { ExamenComponent } from './examen/examen.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RegisterComponent } from './register/register.component';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
+import { InfoMatriculaComponent } from './info-matricula/info-matricula.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'sideb', component: SidebarComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'guia', component: InstruccionesComponent },
+  { path: 'info', component: InfoMatriculaComponent },
   // Agrega más rutas según sea necesario
 ];
 

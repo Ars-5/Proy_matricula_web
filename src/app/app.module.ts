@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
+import { InfoMatriculaComponent } from './info-matricula/info-matricula.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InstruccionesComponent } from './instrucciones/instrucciones.component'
     LoginComponent,
     SidebarComponent,
     RegisterComponent,
-    InstruccionesComponent
+    InstruccionesComponent,
+    InfoMatriculaComponent
   ],
   imports: [
     BrowserModule,
