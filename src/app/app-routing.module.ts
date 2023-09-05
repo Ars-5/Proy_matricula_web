@@ -8,9 +8,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { RegisterComponent } from './register/register.component';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 import { InfoMatriculaComponent } from './info-matricula/info-matricula.component';
+import { InfoAdmisionComponent } from './info-admision/info-admision.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/info', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'examen', component: ExamenComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'guia', component: InstruccionesComponent },
   { path: 'info', component: InfoMatriculaComponent },
+  { path: 'info-admision', component: InfoAdmisionComponent },
   // Agrega más rutas según sea necesario
 ];
 

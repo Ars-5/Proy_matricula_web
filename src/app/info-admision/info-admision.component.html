@@ -1,0 +1,65 @@
+<app-sidebar></app-sidebar>
+
+<div class="container">
+  <div class="form-container">
+    <h2>Datos Personales</h2>
+    <form (ngSubmit)="guardarDatosPersonales()">
+      <div class="form-group">
+        <label for="dni">DNI:</label>
+        <!-- <input type="text" id="dni" [(ngModel)]="datosPersonales.dni" required> -->
+        <input type="text" id="dni" required>
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" required>
+      </div>
+      <div class="form-group">
+        <label for="nombresApellidos">Nombres y Apellidos:</label>
+        <input type="text" id="nombresApellidos" required>
+      </div>
+      <div class="form-group">
+        <label for="facultadEspecialidad">Facultad / Especialidad:</label>
+        <input type="text" id="facultadEspecialidad" required>
+      </div>
+      <div class="form-group">
+        <label for="modalidad">Modalidad:</label>
+        <select id="modalidad" required>
+          <option value="Admisión">Admisión</option>
+          <!-- Agregar otras opciones aquí -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="institucionEducativa">Institución Educativa:</label>
+        <input type="text" id="institucionEducativa" required>
+      </div>
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+
+  <div class="form-container">
+    <h2>Apoderado</h2>
+    <form (ngSubmit)="guardarDatosPadres()">
+      <div class="form-group">
+        <label for="nombresPadres">Nombre:</label>
+        <input type="text" id="nombresPadres" required>
+      </div>
+      <div class="form-group">
+        <label for="apellidosPadres">Apellidos:</label>
+        <input type="text" id="apellidosPadres" required>
+      </div>
+      <div class="form-group">
+        <label for="edadPadres">Edad:</label>
+        <input type="number" id="edadPadres" required>
+      </div>
+      <div class="form-group">
+        <label for="correoPadres">Correo:</label>
+        <input type="email" id="correoPadres" required>
+      </div>
+      <div class="form-group">
+        <label for="celularPadres">Celular:</label>
+        <input type="text" id="celularPadres" required>
+      </div>
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+</div>
