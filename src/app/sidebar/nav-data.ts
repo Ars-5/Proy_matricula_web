@@ -6,7 +6,7 @@ export const navbarData = [
   },
   {
     routeLink: '/info-admision',
-    icon: 'fal fa-pencil-square-o',
+    icon: 'fal fa-list',
     label: 'Información del estudiante',
   },
   {
@@ -15,16 +15,10 @@ export const navbarData = [
     label: 'Examen',
   },
   {
-    routeLink: '/info',
-    icon: 'fal fa-pencil-square-o',
-    label: 'Información',
-  },
-  {
   routeLink: '/consulta',
   icon: 'fal fa-search',
   label: 'Consulta',
   },
-
   {
   routeLink: '/login',
   icon: 'fal fa-sign-out',
