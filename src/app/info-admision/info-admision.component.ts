@@ -28,35 +28,135 @@ export class InfoAdmisionComponent implements OnInit {
   validacionSimilitud() {
     const datosPersonales = this.datosPersonales;
 
-    this.http.get('URL_DE_TU_API').subscribe((response: any) => {
-      // Response contendrá una lista de objetos con la estructura "data"
+    this.http.get('http://localhost:8008/state').subscribe((response: any) => {
+      // Asegúrate de acceder al array dentro de response.data
+      const dataArray = response.data;
 
-      const coincidencias = response.filter((item: any) => {
+      const resultados = dataArray.reduce((acc: any, item: any) => {
         const data = item.data;
-        const datosSeparados = data.split('/'); // Dividimos por el separador "/"
-        const dataNombre = datosSeparados[0]; // Obtenemos el nombre
-        const dataValor = datosSeparados[1]; // Obtenemos el valor
+        // Supongo que los datos en "data" están en el formato "nombre/valor"
+        const datosSeparados = data.split('/');
+        const dataNombre = datosSeparados[0];
+        const dataValor = datosSeparados[1];
 
         // Verificar si el nombre coincide con uno de los campos
-        return (
-          (dataNombre === 'name' && dataValor === datosPersonales.name) ||
-          (dataNombre === 'DNI' && dataValor === datosPersonales.DNI) ||
-          (dataNombre === 'modality' && dataValor === datosPersonales.modality) ||
-          (dataNombre === 'inst' && dataValor === datosPersonales.inst) ||
-          (dataNombre === 'career' && dataValor === datosPersonales.career)
-        );
-      });
+        if (dataNombre === 'DNI' && dataValor === datosPersonales.DNI) {
+          acc.dniCoincide = true;
+        }
+        if (dataNombre === 'inst' && dataValor === datosPersonales.inst) {
+          acc.instCoincide = true;
+        }
 
-      if (coincidencias.length === 5) {
-        // Todos los campos coinciden, puedes realizar acciones adicionales aquí
-        console.log('Todos los datos son iguales');
+        return acc;
+      }, { dniCoincide: false, instCoincide: false });
+
+      if (resultados.dniCoincide && resultados.instCoincide) {
+        console.log('El DNI y el inst introducidos coinciden con la blockchain');
+      } else if (resultados.dniCoincide) {
+        console.log('El DNI introducido coincide con la blockchain, pero el inst no.');
+      } else if (resultados.instCoincide) {
+        console.log('El inst introducido coincide con la blockchain, pero el DNI no.');
       } else {
-        // Al menos un campo no coincide
-        console.log('Algunos datos no son iguales');
+        console.log('Ni el DNI ni el inst introducidos coinciden con la blockchain.');
       }
+
+      console.log('DNI de la blockchain:',
+      resultados.dniCoincide ? datosPersonales.DNI : 'No coincide');
+      console.log('inst de la blockchain:',
+      resultados.instCoincide ? datosPersonales.inst : 'No coincide');
     });
   }
 
+
+  validacionSimilitudSoloDNI() {
+    const dniIntroducido: string = this.datosPersonales.DNI; // Especifica el tipo de dato como string
+
+  this.http.get('http://localhost:8008/state').subscribe((response: any) => {
+    const dataArray = response.data;
+
+    const dniBlockchain: string[] = dataArray
+      .map((item: any) => {
+        const data = item.data;
+        const datosSeparados = data.split('/');
+        const dataNombre = datosSeparados[0];
+        const dataValor = datosSeparados[1];
+        if (dataNombre === 'DNI') {
+          return dataValor; // Extraemos el DNI de la blockchain
+        }
+        return null;
+      })
+      .filter((dni: null) => dni !== null) as string[]; // Filtramos los valores nulos y especificamos el tipo
+
+    const coincidenciaDNI = dniBlockchain.includes(dniIntroducido);
+
+    if (coincidenciaDNI) {
+      console.log('El DNI introducido coincide con el DNI de la blockchain');
+    } else {
+      console.log('El DNI introducido no coincide con el DNI de la blockchain');
+    }
+
+    console.log('DNI de la blockchain:', dniBlockchain);
+    console.log('DNI introducido:', dniIntroducido);
+  });
+}
+
+validacionSimilitudForm() {
+  const datosPersonales = this.datosPersonales;
+
+  this.http.get('http://localhost:8008/state').subscribe((response: any) => {
+    const dataArray = response.data;
+    const resultados = dataArray.reduce((acc: any, item: any) => {
+      const data = item.data;
+      const datosSeparados = data.split('/');
+      const dataNombre = datosSeparados[0];
+      const dataValor = datosSeparados[1];
+
+      // Verificar si el nombre coincide con uno de los campos
+      if (dataNombre === 'DNI' && dataValor === datosPersonales.DNI) {
+        acc.dniCoincide = true;
+      }
+      if (dataNombre === 'inst' && dataValor === datosPersonales.inst) {
+        acc.instCoincide = true;
+      }
+      if (dataNombre === 'faculty' && dataValor === datosPersonales.faculty) {
+        acc.facultyCoincide = true;
+      }
+      if (dataNombre === 'modality' && dataValor === "admisionw==") {
+        acc.modalityCoincide = true;
+      }
+
+      return acc;
+    }, { dniCoincide: false, instCoincide: false, facultyCoincide: false, modalityCoincide: false });
+
+    const mensajes: string[] = [];
+
+    if (resultados.dniCoincide) {
+      mensajes.push('El DNI consultado coincide con la blockchain');
+    } else {
+      mensajes.push('El DNI consultado no coincide con la blockchain');
+    }
+
+    if (resultados.instCoincide) {
+      mensajes.push('El inst. consultado coincide con la blockchain');
+    } else {
+      mensajes.push('El inst. consultado no coincide con la blockchain');
+    }
+
+    if (resultados.facultyCoincide) {
+      mensajes.push('La especialidad consultada coincide con la blockchain');
+    } else {
+      mensajes.push('La especialidad consultada no coincide con la blockchain');
+    }
+
+    if (resultados.modalityCoincide) {
+      mensajes.push('La modalidad consultada coincide con la blockchain');
+    } else {
+      mensajes.push('La modalidad consultada no coincide con la blockchain');
+    }
+
+    mensajes.forEach((mensaje) => console.log(mensaje));
+  });
+}
 
 
 }

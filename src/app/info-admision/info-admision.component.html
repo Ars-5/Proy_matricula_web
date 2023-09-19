@@ -3,11 +3,11 @@
 <div class="container">
   <div class="form-container">
     <h2>Datos Personales</h2>
-    <form (ngSubmit)="guardarDatosPersonales()">
+    <form (ngSubmit)="validacionSimilitudForm()" name="miFormulario">
       <div class="form-group">
         <label for="dni">DNI:</label>
-        <!-- <input type="text" id="dni" [(ngModel)]="datosPersonales.dni" required> -->
-        <input type="text" id="dni" required>
+        <input type="text" id="dni" [(ngModel)]="datosPersonales.DNI" required [ngModelOptions]="{standalone: true}">
+
       </div>
       <div class="form-group">
         <label for="edad">Edad:</label>
@@ -19,18 +19,18 @@
       </div>
       <div class="form-group">
         <label for="facultadEspecialidad">Facultad / Especialidad:</label>
-        <input type="text" id="career" required>
+        <input type="text" id="faculty" required>
       </div>
       <div class="form-group">
         <label for="modalidad">Modalidad:</label>
         <select id="modality" required>
-          <option value="Admisión">Admisión</option>
+          <option value="Admisión">admision</option>
           <!-- Agregar otras opciones aquí -->
         </select>
       </div>
       <div class="form-group">
         <label for="institucionEducativa">Institución Educativa:</label>
-        <input type="text" id="inst" required>
+        <input type="text" id="inst" [(ngModel)]="datosPersonales.inst" required [ngModelOptions]="{standalone: true}">
       </div>
       <button type="submit">Guardar</button>
     </form>

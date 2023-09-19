@@ -9,7 +9,20 @@ import Swal from 'sweetalert2';
 export class ExamenComponent implements OnInit {
   sidebarCollapsed = false;
   labelsVisible = true;
-  constructor() { }
+  fechaActual: string;
+
+  constructor() {
+    //fecha actual
+    const today = new Date();
+
+    // Obtiene el año, mes y día (yy/MM/dd)
+    const year = today.getFullYear().toString().slice(-2); // Obtiene los últimos dos dígitos del año
+    const month = ('0' + (today.getMonth() + 1)).slice(-2); // Agrega un cero inicial al mes si es necesario
+    const day = ('0' + today.getDate()).slice(-2); // Agrega un cero inicial al día si es necesario
+
+    // Formatea la fecha
+    this.fechaActual = `${day}/${month}/${year}`;
+  }
 
   toggleSidebar() {
     this.sidebarCollapsed = !this.sidebarCollapsed;
@@ -21,7 +34,7 @@ export class ExamenComponent implements OnInit {
   }
 
 
-  submitExam() {
+  submitExam(){
     // ... tu código para validar y procesar el formulario ...
 
     // Mostrar la alerta de registro exitoso

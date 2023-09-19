@@ -2,7 +2,29 @@
 
 <div class="main-content">
   <div class="exam-container">
-    <h1 class="titulo">Examen</h1>
+    <div class="exam-header">
+      <h1 class="titulo">Examen de admisión</h1>
+      <p class="fecha-actual">Fecha: {{ fechaActual }}</p>
+    </div>
+    <div class="student-info">
+      <div class="student-info top-right">
+        <div class="form-group">
+          <label for="dni">DNI:</label>
+          <input type="text" id="dni" >
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre">
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos">
+        </div>
+
+      </div>
+
+    </div>
+
     <div class="question">
       <p  class="pregunta">Pregunta 1: ¿?</p>
       <label><input type="radio" name="q1" value="a"> a) 3</label>
@@ -16,7 +38,22 @@
       <label><input type="radio" name="q2" value="b"> b) 3</label>
       <label><input type="radio" name="q2" value="c"> c) 4</label>
     </div>
-
+    <div class="question">
+      <p  class="pregunta">Pregunta 3: ¿?</p>
+      <label><input type="radio" name="q3" value="a"> a) 3</label>
+      <label><input type="radio" name="q3" value="b"> b) 4</label>
+      <label><input type="radio" name="q3" value="c"> c) 5</label>
+    </div><div class="question">
+      <p  class="pregunta">Pregunta 4: ¿?</p>
+      <label><input type="radio" name="q4" value="a"> a) 3</label>
+      <label><input type="radio" name="q4" value="b"> b) 4</label>
+      <label><input type="radio" name="q4" value="c"> c) 5</label>
+    </div><div class="question">
+      <p  class="pregunta">Pregunta 5: ¿?</p>
+      <label><input type="radio" name="q5" value="a"> a) 3</label>
+      <label><input type="radio" name="q5" value="b"> b) 4</label>
+      <label><input type="radio" name="q5" value="c"> c) 5</label>
+    </div>
     <!-- Agrega más preguntas aquí -->
 
     <button (click)="submitExam()">Enviar Examen</button>

@@ -1,23 +1,108 @@
 .main-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 20px;
 }
 
-/* Estilos para el input y el botón */
+.left-section,
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separator {
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.1); /* Color de la línea separadora */
+  height: 100%;
+}
+
+.card {
+  width: 500px;
+  background-color: #fff; /* Color de fondo del card */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Alineación a la izquierda */
+  gap: 10px;
+  padding: 20px; /* Espaciado interno del card */
+}
+
+.print-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .hash-input {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left; /* Alineación a la izquierda */
   gap: 10px;
 }
 
-/* Estilos para el bloque de detalles */
 .block-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left; /* Alineación a la izquierda */
   gap: 10px;
+}
+
+/* Estilos para el input y el botón */
+#hash {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilo para el text area transparente */
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent; /* Fondo transparente */
+  resize: none; /* Evitar el cambio de tamaño */
+}
+
+/* Estilo para el título "Certificado HASH" */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px; /* Espaciado inferior del título */
+}
+
+.hash-list {
+  text-align: left;
+  white-space: pre-wrap; /* Permitir que el texto envuelva */
+}
+
+.print-icon {
+  margin: 10px;
+  position: absolute;
+  top: 10px; /* Ajusta la distancia desde la parte superior según sea necesario */
+  right: 10px; /* Ajusta la distancia desde la derecha según sea necesario */
+  font-size: 24px; /* Tamaño del icono */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  color: #3498db; /* Color del icono (puedes ajustarlo según tus preferencias) */
 }

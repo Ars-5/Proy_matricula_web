@@ -8,8 +8,15 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.titulo {
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
+}
+
+.titulo {
+  margin-bottom: 5px;
 }
 
 .question {
@@ -33,4 +40,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+}
+
+.fecha-actual {
+  /* Estilo para la fecha */
+  margin: 0; /* Eliminar el margen superior de la fecha */
+  font-weight: bold; /* Hacer la fecha en negrita si lo deseas */
 }
