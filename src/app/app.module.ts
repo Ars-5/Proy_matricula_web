@@ -14,6 +14,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 import { InfoMatriculaComponent } from './info-matricula/info-matricula.component';
 import { InfoAdmisionComponent } from './info-admision/info-admision.component';
+import { VistaDocenteComponent } from './vista-docente/vista-docente.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InfoAdmisionComponent } from './info-admision/info-admision.component';
     RegisterComponent,
     InstruccionesComponent,
     InfoMatriculaComponent,
-    InfoAdmisionComponent
+    InfoAdmisionComponent,
+    VistaDocenteComponent
   ],
   imports: [
     BrowserModule,

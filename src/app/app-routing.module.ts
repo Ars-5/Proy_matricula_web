@@ -9,6 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { InstruccionesComponent } from './instrucciones/instrucciones.component';
 import { InfoMatriculaComponent } from './info-matricula/info-matricula.component';
 import { InfoAdmisionComponent } from './info-admision/info-admision.component';
+import { VistaDocenteComponent } from './vista-docente/vista-docente.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'guia', component: InstruccionesComponent },
   { path: 'info', component: InfoMatriculaComponent },
   { path: 'info-admision', component: InfoAdmisionComponent },
+  { path: 'docente', component: VistaDocenteComponent },
   // Agrega más rutas según sea necesario
 ];
 

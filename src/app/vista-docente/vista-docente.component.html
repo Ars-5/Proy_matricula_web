@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Consulta de Exámenes para Docentes</h1>
+
+  <!-- Filtros para la consulta (puedes agregar más según sea necesario) -->
+  <div class="filters">
+    <label for="faculty">Facultad:</label>
+    <p>{{faculty}}</p>
+
+    <button (click)="consultarExamenes()">Consultar Exámenes</button>
+  </div>
+
+  <!-- Resultados de la consulta -->
+  <div class="consulta-result">
+    <h2>Resultados de la Consulta</h2>
+    <textarea id="exam-results" [(ngModel)]="examResults" rows="10" readonly></textarea>
+  </div>
+</div>
+
+
+<div class="sidenav" >
+  <div class="logo-container">
+    <button class="logo"> U </button>
+  </div>
+  <ul class="sidenav-nav">
+      <i class="sidenav-link" class="fal fa-sign-out" ></i>
+  </ul>
+  <div>
+
+  </div>
+</div>
